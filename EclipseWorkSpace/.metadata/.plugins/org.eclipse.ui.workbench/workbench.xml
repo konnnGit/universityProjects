@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="13" version="2.0">
+<workbench progressCount="21" version="2.0">
 <workbenchAdvisor/>
 <window height="774" maximized="true" width="1012" x="64" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -31,25 +31,32 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMethod.java" partName="KasiskiMethod.java" title="KasiskiMethod.java" tooltip="/home/konnn/Git/EclipseWorkSpace/KasiskiMethod/src/KasiskiMethod.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/home/konnn/Git/EclipseWorkSpace/KasiskiMethod/src/KasiskiMethod.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="6874" selectionOffset="0" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMain.java" partName="KasiskiMain.java" path="/home/konnn/Git/University/EclipseWorkSpace/Kasiski/src/KasiskiMain.java" title="KasiskiMain.java" tooltip="Kasiski/src/KasiskiMain.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kasiski/src/KasiskiMain.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1594" selectionTopPixel="609"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMeth.java" partName="KasiskiMeth.java" path="/home/konnn/Git/University/EclipseWorkSpace/KasiskiMeth/src/KasiskiMeth.java" title="KasiskiMeth.java" tooltip="KasiskiMeth/src/KasiskiMeth.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Motive.java" partName="Motive.java" path="/home/konnn/Git/University/EclipseWorkSpace/Kasiski/src/Motive.java" title="Motive.java" tooltip="Kasiski/src/Motive.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kasiski/src/Motive.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="585" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="motivesList.java" partName="motivesList.java" path="/home/konnn/Git/University/EclipseWorkSpace/Kasiski/src/motivesList.java" title="motivesList.java" tooltip="Kasiski/src/motivesList.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kasiski/src/motivesList.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="111" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMeth.java" partName="KasiskiMeth.java" path="/home/konnn/Git/University/EclipseWorkSpace/KasiskiMeth/src/KasiskiMeth.java" title="KasiskiMeth.java" tooltip="KasiskiMeth/src/KasiskiMeth.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/KasiskiMeth/src/KasiskiMeth.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="1" selectionOffset="2468" selectionTopPixel="1712"/>
+<editorState selectionHorizontalPixel="0" selectionLength="24" selectionOffset="1111" selectionTopPixel="670"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
-</view>
-<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
-<viewState/>
 </view>
 <view id="org.eclipse.jdt.ui.PackageExplorer" partName="Package Explorer">
 <viewState group_libraries="1" layout="2" linkWithEditor="0" rootMode="1" workingSetName="">
@@ -213,7 +220,6 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.eclipse.ui.console.ConsoleView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -237,18 +243,16 @@
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.25" ratioLeft="251" ratioRight="753" relationship="2" relative="left"/>
-<info folder="true" part="bottom" ratio="0.7163412" ratioLeft="697" ratioRight="276" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<info folder="true" part="bottom" ratio="0.03802672" ratioLeft="37" ratioRight="936" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProblemView" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.JavadocView" label="LabelNotFound"/>
 <page content="org.eclipse.jdt.ui.SourceView" label="LabelNotFound"/>
 <page content="org.eclipse.search.ui.views.SearchView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ProgressView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.749004" ratioLeft="564" ratioRight="189" relationship="2" relative="org.eclipse.ui.editorss">
@@ -268,53 +272,160 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" uri="file:/home/konnn/Git/EclipseWorkSpace/KasiskiMethod/src/KasiskiMethod.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/KasiskiMeth/src/KasiskiMeth.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Kasiski/src/KasiskiMain.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Kasiski/src/Motive.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Kasiski/src/motivesList.java"/>
 </editors>
-<item historyLabel="KasiskiMethod.java" index="0">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="KasiskiMeth.java" index="0">
+<position info="not_deleted" x="1833" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
+<item historyLabel="KasiskiMain.java" index="1">
 <position/>
 </item>
-<item historyLabel="KasiskiMethod.java" index="0">
-<position info="not_deleted" x="0" y="6874"/>
+<item historyLabel="KasiskiMeth.java" index="0">
+<position info="not_deleted" x="1833" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1167" y="0"/>
+</item>
+<item historyLabel="KasiskiMeth.java" index="0">
+<position info="not_deleted" x="1111" y="24"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1412" y="0"/>
+</item>
+<item historyLabel="KasiskiMeth.java" index="0">
+<position info="not_deleted" x="1111" y="24"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1412" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1695" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1871" y="27"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
 <position/>
 </item>
-<item historyLabel="KasiskiMethod.java" index="0">
-<position info="not_deleted" x="0" y="38"/>
+<item historyLabel="motivesList.java" index="3">
+<position info="not_deleted" x="383" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
+<item historyLabel="Motive.java" index="2">
+<position info="not_deleted" x="585" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
 <position/>
 </item>
-<item historyLabel="KasiskiMethod.java" index="0">
-<position info="not_deleted" x="0" y="6874"/>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1802" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="3735" y="0"/>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1523" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="3829" y="0"/>
+<item historyLabel="Motive.java" index="2">
+<position info="not_deleted" x="585" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="4242" y="0"/>
+<item historyLabel="motivesList.java" index="3">
+<position info="not_deleted" x="96" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="4846" y="0"/>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1523" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="4069" y="0"/>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1534" y="0"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="4014" y="40"/>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1765" y="34"/>
 </item>
-<item historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="2473" y="0"/>
+<item historyLabel="motivesList.java" index="3">
+<position info="not_deleted" x="390" y="0"/>
 </item>
-<item active="true" historyLabel="KasiskiMeth.java" index="1">
-<position info="not_deleted" x="4014" y="40"/>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="312" y="0"/>
+</item>
+<item historyLabel="motivesList.java" index="3">
+<position info="not_deleted" x="383" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position/>
+</item>
+<item historyLabel="motivesList.java" index="3">
+<position info="not_deleted" x="383" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1577" y="0"/>
+</item>
+<item historyLabel="motivesList.java" index="3">
+<position info="not_deleted" x="111" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1857" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1765" y="34"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1860" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1765" y="34"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1649" y="52"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="208" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="190" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1759" y="0"/>
+</item>
+<item historyLabel="Motive.java" index="2">
+<position info="not_deleted" x="585" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1647" y="0"/>
+</item>
+<item historyLabel="Motive.java" index="2">
+<position info="not_deleted" x="585" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1647" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position/>
+</item>
+<item historyLabel="Motive.java" index="2">
+<position info="not_deleted" x="585" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1568" y="0"/>
+</item>
+<item historyLabel="Motive.java" index="2">
+<position info="not_deleted" x="585" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1584" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1695" y="0"/>
+</item>
+<item active="true" historyLabel="KasiskiMain.java" index="1">
+<position info="not_deleted" x="1592" y="41"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -335,6 +446,18 @@
 <mruList>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMeth.java" tooltip="KasiskiMeth/src/KasiskiMeth.java">
 <persistable path="/KasiskiMeth/src/KasiskiMeth.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="motivesList.java" tooltip="Kasiski/src/motivesList.java">
+<persistable path="/Kasiski/src/motivesList.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Motive.java" tooltip="Kasiski/src/Motive.java">
+<persistable path="/Kasiski/src/Motive.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMain.java" tooltip="Kasiski/src/KasiskiMain.java">
+<persistable path="/Kasiski/src/KasiskiMain.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Kasiski/src/Main.java">
+<persistable path="/Kasiski/src/Main.java"/>
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMethod.java" tooltip="/home/konnn/Git/EclipseWorkSpace/KasiskiMethod/src/KasiskiMethod.java">
 <persistable uri="file:/home/konnn/Git/EclipseWorkSpace/KasiskiMethod/src/KasiskiMethod.java"/>

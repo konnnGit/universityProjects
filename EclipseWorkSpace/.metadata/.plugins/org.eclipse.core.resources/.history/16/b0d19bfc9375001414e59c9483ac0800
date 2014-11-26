@@ -1,0 +1,8 @@
+
+public class Motive {
+	private String motiveName;
+	private int position;
+	private Motive link;
+	
+
+}

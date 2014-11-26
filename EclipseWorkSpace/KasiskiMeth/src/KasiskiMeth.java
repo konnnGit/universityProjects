@@ -17,6 +17,7 @@ public class KasiskiMeth {
 	        String tempMotive=null;
 	        int dev=1;
 	        boolean sysExit=true;
+	        
 	        try{
 	            fileScanner = new Scanner(new FileInputStream("vAll"));
 	            
@@ -157,7 +158,7 @@ public class KasiskiMeth {
 	       
 	       
 	      
-	        	   while(!motives[i].equals(tempMotive)&&i<mot){	    	   
+	        	   while(motives[i]!=tempMotive){	    	   
 	    	    	   i++;
 	        	   }
 	        	   

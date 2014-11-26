@@ -1,0 +1,14 @@
+
+public class Motive {
+	private String motiveName;
+	private int position;
+	private Motive link;
+	
+	public Motive(){
+		link=null;
+		motiveName=null;
+		position=0;
+	}
+	
+
+}
