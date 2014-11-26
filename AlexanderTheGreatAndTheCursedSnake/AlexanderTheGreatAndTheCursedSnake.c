@@ -20,7 +20,7 @@ email:cst08094uop.gr,
  * 
  */
 
-*/
+
 #include <stdio.h>
 #include <stdlib.h>
 # include <time.h>
