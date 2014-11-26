@@ -13,7 +13,7 @@ public class KasiskiMeth {
 	        int boundD=0;
 	    	boundU=boundD+3;	        
 	        Scanner fileScanner =null;
-	        Scanner scan = new Scanner(System.in);
+	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	        String tempMotive=null;
 	        int dev=1;
 	        boolean sysExit=true;
@@ -152,12 +152,14 @@ public class KasiskiMeth {
 	       
 	       
 	       
-	      
-	           tempMotive = scan.nextLine();
+	       try {
+	           tempMotive = br.readLine();
+	        } catch (IOException ioe) {
+	           System.out.println("IO error trying to read !");
+	        }
 	       
-	       
 	      
-	        	   while(!motives[i].equals(tempMotive)&&i<mot){	    	   
+	        	   while(!motives[i].equals(tempMotive)||i<mot){	    	   
 	    	    	   i++;
 	        	   }
 	        	   
