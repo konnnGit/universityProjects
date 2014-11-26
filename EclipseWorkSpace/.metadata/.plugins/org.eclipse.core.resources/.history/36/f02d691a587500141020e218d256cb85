@@ -146,7 +146,7 @@ public class KasiskiMeth {
 	        	
 	        ///---!Print	
 	        
-	        i=0;
+	        int r=0;
 	       
 	        System.out.println("What motive you want to find factors ?");   
 	       
@@ -158,16 +158,23 @@ public class KasiskiMeth {
 	           System.out.println("IO error trying to read !");
 	        }
 	       
-	      
-	        	   while(!motives[i].equals(tempMotive)&&i<mot){	    	   
-	    	    	   i++;
+	       if(tempMotive=="exit"){
+        	   sysExit=false; 
+        	   //continue;
+	       } 
+        	   else{
+	        	   for(i=0;i<mot;i++){	    	   
+	    	    	   if(motives[i].equals(tempMotive)){
+	    	    		   r=i;
+	    	    		   break;
+	    	    	   }
 	        	   }
 	        	   
 	    	       for(j=0;j<100;j++){ 
-	    	    	   System.out.println("Motive ("+motives[i]+") factrors  "+motDistFact[i][j]+",");
+	    	    	   System.out.println("Motive ("+motives[r]+") factrors  "+motDistFact[r][j]+",");
 	    	    	   
 	    	       }
-	             
+	           }  
         	   
         	   
 	       

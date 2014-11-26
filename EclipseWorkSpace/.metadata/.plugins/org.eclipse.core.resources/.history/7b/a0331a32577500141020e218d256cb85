@@ -129,14 +129,14 @@ public class KasiskiMeth {
 	        
 	        //Print
 	        
-	       	for(i=0;i<mot;i++){
+	        	for(i=0;i<mot;i++){
 	        	if(motives[i]!=null){
 	        	System.out.print("motive No "+i+":");
 	        	System.out.print(motives[i]);
 	        	System.out.print(" exists :"+motivesCount[i]+"times in ");
 	        	for(j=0;j<=200;j++){
 	        		if(motivesPos[i][j]!=0)
-	        		System.out.print(motivesPos[i][j]+",");	        		
+	        		C(motivesPos[i][j]+",");	        		
 	        	}
 	        	
 	        	System.out.println();
@@ -146,7 +146,7 @@ public class KasiskiMeth {
 	        	
 	        ///---!Print	
 	        
-	        i=0;
+	        int r=0;
 	       
 	        System.out.println("What motive you want to find factors ?");   
 	       
@@ -158,16 +158,22 @@ public class KasiskiMeth {
 	           System.out.println("IO error trying to read !");
 	        }
 	       
-	      
-	        	   while(!motives[i].equals(tempMotive)&&i<mot){	    	   
-	    	    	   i++;
-	        	   }
-	        	   
-	    	       for(j=0;j<100;j++){ 
-	    	    	   System.out.println("Motive ("+motives[i]+") factrors  "+motDistFact[i][j]+",");
+	       if(tempMotive=="exit"){
+        	   sysExit=false; 
+        	   //continue;
+	       } 
+        	   else{
+	        	   for(i=0;i<mot;i++)	    	   
+	    	    	   if(motives[i]==tempMotive){
+	    	    		   r=i;
+	    	    		   continue;
+	    	    	   }
+	    	       
+	    	       for(j=0;j<50;j++){ 
+	    	    	   System.out.println("Motive ("+motives[r]+") factrors  "+motDistFact[r][j]+",");
 	    	    	   
 	    	       }
-	             
+	           }  
         	   
         	   
 	       

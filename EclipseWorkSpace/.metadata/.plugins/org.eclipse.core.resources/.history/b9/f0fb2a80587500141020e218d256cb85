@@ -159,7 +159,7 @@ public class KasiskiMeth {
 	        }
 	       
 	      
-	        	   while(!motives[i].equals(tempMotive)&&i<mot){	    	   
+	        	   while(!motives[i].equals(tempMotive)){	    	   
 	    	    	   i++;
 	        	   }
 	        	   
