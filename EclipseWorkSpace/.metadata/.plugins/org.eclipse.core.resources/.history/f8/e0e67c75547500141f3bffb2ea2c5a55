@@ -74,7 +74,7 @@ public class KasiskiMeth {
 	        for( i=0;i<(strL/3);i++) motivesCount[i]=1;//initialing to 1 every motive found
 	        
 	        int[][] motivesPos=new int[strL/3][strL/3];//The 2-D array stores the "id" of each motive and the positions found
-	        int[][] motDistFact=new int[3][150];
+	        int[][] motDistFact=new int[3][100];
 	  //Start find motives and their positions
 	        
 	        for(i=0;i<(strL/4)-2;i++){	        	
@@ -117,7 +117,6 @@ public class KasiskiMeth {
 		    				   }
 		    					   
 		    				   }
-	        		
 	        		}
 	        		
 	        	
