@@ -62,7 +62,7 @@ public class KasiskiMain {
 	}
 	
 	while(loop){
-	/*--!Factors of motives distances---*/
+	/*--!Frequency of motives---*/
 	System.out.println("Look for motive(type exit to loop out) :");
 	//input=null;
 	input=terminalScanner.nextLine();
