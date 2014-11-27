@@ -35,50 +35,33 @@ public class KasiskiMain {
 	//System.out.print(file);
 	file=file.replaceAll("\\W+", "");//remove all no-letters
 	file=file.toUpperCase();
-	System.out.print(file);
+	//System.out.print(file);
 	char[] s=new char[file.length()];
 	s=file.toCharArray();
 	
-	/*
-	while(i<file.length()/3 && up+3<file.length()){	        
-    	strTrimmed[i]=file.substring(down,up);
-    	System.out.print(strTrimmed[i]+",");
-    	down=down+3;
-    	up=up+3;
-    	i++;	        	
-    }
-	
-	for(j=0;j<i;j++){
-		list.addToStart(strTrimmed[j], j);
-		System.out.print(list.getNewEntry()+",");
-	}*/
 	
 	System.out.println();
 	while( up+3<file.length()&&i<file.length()/3){	
 		//s123=file.substring(down,up);
 		//System.out.print(s123+'-');
-		l.add(i,file.substring(down,up) );
-    	System.out.print(l.iterator().next()+",");
+		l.add(file.substring(down,up) );    	
     	down=down+3;
     	up=up+3;
     	i++;	        	
     }
 	
-
+	Set<String> uniqueSet = new HashSet<String>(l);
+	List<Integer> indexes = new ArrayList<Integer>();
 	
-	
-	
-/*	
-	while(iterList.hasNext()){
-		
-		if(iterList.equals(iterList.next())){
-			System.out.print(iterList.next().getMotiveName()+":");
-			System.out.print(iterList.next().getPosition());
-		}
+	/*--Frequency of motives---*/
+	for (String temp : uniqueSet) {
+		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+",");
+		System.out.print(l.indexOf(temp));
 		System.out.println();
 	}
-	*/
-    
+	/*--!Frequency of motives---*/
+	
+
 	
 
 }

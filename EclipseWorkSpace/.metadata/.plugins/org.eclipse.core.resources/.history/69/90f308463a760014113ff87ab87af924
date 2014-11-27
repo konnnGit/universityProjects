@@ -51,7 +51,7 @@ public class KasiskiMain {
     }
 	
 	Set<String> uniqueSet = new HashSet<String>(l);
-	//List<Integer> indexes = new ArrayList<Integer>();
+	List<Integer> indexes = new ArrayList<Integer>();
 	
 	/*--Frequency of motives---*/
 	for (String temp : uniqueSet) {
@@ -60,15 +60,57 @@ public class KasiskiMain {
 		System.out.println();
 	}
 	/*--!Frequency of motives---*/
-	System.out.println("Look for motive :");
 	
+/*	while (l.iterator().hasNext()){
+		String tmp1=l.iterator().next();
+		while(l.iterator().hasNext()){
+			String tmp2=l.iterator().next();
+			int in=l.indexOf(l.iterator().next());
+			if (tmp1.equals(tmp2)) indexes.add(in);
+		}
+		System.out.println("indexes"+tmp1 +":"+indexes);
+		indexes.clear();
+	}*/
+	/*for (String temp1 : l) {
+		for (String temp2 : l) {
+			if (temp1.equals(temp2)){
+				indexes.add(l.indexOf(temp1));
+				indexes.add(l.indexOf(temp2));
+			}
+		}
+		System.out.println("indexes"+temp1 +":"+indexes);
+		indexes.clear();
+	}*/
+	
+	for(i=0;i<l.size()-1;i++){
+		
+			if(l.equals(l.get(j))) indexes.add(l.indexOf(l.get(j)));
+		
+		System.out.println("indexes"+l.get(i) +":"+indexes);
+		indexes.clear();
+	}
+	
+	/*
+	for(i=0;i<l.size();i++){
+		if(l.iterator().equals(l.get(i))){
+			indexes.add(l.indexOf(l.get(i)));
+			//k=l.get(i).indexOf(l.get(i));
+			System.out.println(l.indexOf(l.get(i)));
+		}
+		System.out.println("indexes"+l.get(i) +":"+indexes);
+		indexes.clear();
+	}*/
+	
+	
+	//System.out.println(indexes);
+	/*System.out.println("Name of the most motive : ");
 	input=terminalScanner.nextLine();
     terminalScanner.close();
-    for(i=0)
-    
-    if()
-    
-
+	for (String temp=input : uniqueSet) {
+		
+		
+	}*/
+	
 	
 
 }
