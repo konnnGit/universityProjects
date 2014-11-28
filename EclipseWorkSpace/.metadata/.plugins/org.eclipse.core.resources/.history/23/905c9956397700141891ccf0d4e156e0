@@ -13,7 +13,7 @@ public class KasiskiMain {
     Scanner terminalScanner = new Scanner(System.in);
     int i,up,down;
     i=up=down=0;
-    int posibleLength=0;
+    
     String file="";
     String scanner=null;    
     boolean loop=true;
@@ -120,36 +120,34 @@ public class KasiskiMain {
 	 //terminalScanner.close();
 	
 	//--------------- find the freq of each letter 
-	//i=1;
+	i=1;
 	List<Integer> lettersFreq = new ArrayList<Integer>();
-    Arrays.sort(s );      
+    Arrays.sort(s);      
     while(ch<='Z'){
     	h=0;dd=0;
     	while( h<file.length()){
         	if(s[h]==ch) dd++;
         	h++;
         }
-    	lettersFreq.add( dd);
-    	i++;
+    	lettersFreq.add(i++, dd);
     	 System.out.println(ch+" found "+dd+" times.");
     	ch++;	        	
     }
-    System.out.println(lettersFreq);
+    
 //----------------------------------------------------
     
-    while(loop){
+    
     //------------- Find Ic
-    System.out.println("Select posible length (type 0 to loop out) :");
-    posibleLength=terminalScanner.nextInt();
-    for( int j=1;j<=posibleLength;j++){    
-    	for(i=0;i<26;i++){
-    		IC=IC+lettersFreq.get(i)*(lettersFreq.get(i)-1);
-    		IC=IC*26/(file.length()*(file.length()-1));    	
+    for( int posibleLength=0;posibleLength<9;posibleLength++){    
+    System.out.println("Posible length :"+posibleLength);
+   // posibleLength=terminalScanner.nextInt();
+    for(i=1;i<=26;i++){
+    	IC=IC+26*(lettersFreq.remove(i)*(lettersFreq.remove(i))/(file.length()*(file.length()-1)));
+    	
     }
-    System.out.println("Posible length :"+j+" IC: "+IC);
-   // System.out.print(IC);
+    System.out.print(IC);
     }
-    }
+    
 	
     }
 }

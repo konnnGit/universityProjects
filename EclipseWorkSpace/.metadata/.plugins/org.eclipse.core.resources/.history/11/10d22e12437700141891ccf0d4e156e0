@@ -134,7 +134,7 @@ public class KasiskiMain {
     	 System.out.println(ch+" found "+dd+" times.");
     	ch++;	        	
     }
-    System.out.println(lettersFreq);
+    
 //----------------------------------------------------
     
     while(loop){
