@@ -75,7 +75,7 @@ public class KasiskiMain {
 	List<Integer> indexes = new ArrayList<Integer>();
 	List<Integer> factors = new ArrayList<Integer>();
 	
-	//*----------------------------Frequency of motives---*/
+	//*--Frequency of motives---*/
 	for (String temp : uniqueSet) {
 		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+",");
 		System.out.print(l.indexOf(temp));
@@ -84,7 +84,7 @@ public class KasiskiMain {
 	
 	//------------------------------
 	
-	//-------------------Look manually for a motive to find its factors
+	//Look manually for a motive to find its factors
 	
 	while(loop){	
 	System.out.println("Look up for motive(type exit to loop out) :");
@@ -117,9 +117,9 @@ public class KasiskiMain {
 	}
 	
 	//-----------------------------------------
-	 //terminalScanner.close();
+	 terminalScanner.close();
 	
-	//--------------- find the freq of each letter 
+	//short s in order to find the freq of each letter 
     Arrays.sort(s);      
     while(ch<='Z'){
     	h=0;dd=0;
@@ -132,15 +132,6 @@ public class KasiskiMain {
     }
     
 //----------------------------------------------------
-    
-    
-    //------------- Find Ic
-    int posibleLength=0;
-    System.out.println("Assume posible length :");
-    posibleLength=terminalScanner.nextInt();
-    for(i=0;)
-    
-    
 	
     }
 }

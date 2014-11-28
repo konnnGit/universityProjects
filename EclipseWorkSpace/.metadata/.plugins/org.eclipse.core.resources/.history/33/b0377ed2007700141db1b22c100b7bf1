@@ -4,41 +4,24 @@ import java.util.*;
 public class KasiskiMain {
 	public static void main(String[] args) {
 		
-	
+	motivesList	list=new motivesList();
 	LinkedList<String> l=new LinkedList<String>();
 	
-	int motiveLength=3;
 	String input =null;
 	Scanner fileScanner =null;
     Scanner terminalScanner = new Scanner(System.in);
-    int i,up,down;
-    i=up=down=0;
-    
+    int j,i,up,down;
+    j=i=up=down=0;
+    up=down+3;
     String file="";
-    String scanner=null;    
+    String scanner=null;
+    String s123;
     boolean loop=true;
     int dev=1;
-    int h=0;
-    int dd=0;   
-    float IC=0;
-    char ch='A';
-    
-    
-    
-    System.out.println("Name of the ciphered file(type exit to loop out)  : ");
+
+    System.out.println("Name of the ciphered file : ");
     input=terminalScanner.nextLine();
-    if (input.equals("exit")){
-    	 terminalScanner.close();
-    	 return;
-    }
-    
-    while(loop){   	
-    System.out.println("Type 0 to exit.");
-    System.out.println("Desired motive length: ");
-    motiveLength=terminalScanner.nextInt();
-    up=down+motiveLength;
-    
-   
+   // terminalScanner.close();
 	try{
         fileScanner = new Scanner(new FileInputStream(input));
         
@@ -51,9 +34,6 @@ public class KasiskiMain {
     	scanner=fileScanner.next();
     	file=file+scanner;	        
     }
-	
-	
-	
 	//System.out.print(file);
 	file=file.replaceAll("\\W+", "");//remove all no-letters
 	file=file.toUpperCase();
@@ -63,11 +43,12 @@ public class KasiskiMain {
 	
 	
 	System.out.println();
-	while( up+motiveLength<file.length()&&i<file.length()/motiveLength){	
-		
+	while( up+3<file.length()&&i<file.length()/3){	
+		//s123=file.substring(down,up);
+		//System.out.print(s123+'-');
 		l.add(file.substring(down,up) );    	
-    	down=down+motiveLength;
-    	up=up+motiveLength;
+    	down=down+3;
+    	up=up+3;
     	i++;	        	
     }
 	//New declarations
@@ -75,16 +56,12 @@ public class KasiskiMain {
 	List<Integer> indexes = new ArrayList<Integer>();
 	List<Integer> factors = new ArrayList<Integer>();
 	
-	//*----------------------------Frequency of motives---*/
+	/*--Frequency of motives---*/
 	for (String temp : uniqueSet) {
 		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+",");
 		System.out.print(l.indexOf(temp));
 		System.out.println();
 	}
-	
-	//------------------------------
-	
-	//-------------------Look manually for a motive to find its factors
 	
 	while(loop){	
 	System.out.println("Look up for motive(type exit to loop out) :");
@@ -101,7 +78,7 @@ public class KasiskiMain {
     }
     
     
-    
+    System.out.println("Motive"+input+"factors are:");
     for(i=0;i<indexes.size()-1;i++){
     	//System.out.print(indexes.get(i+1)-indexes.get(i)+"-");
     	for(dev=1;dev<(indexes.get(i+1)-indexes.get(i));dev++){
@@ -110,38 +87,10 @@ public class KasiskiMain {
     	}
     		
     }
-    Collections.sort(factors);
-    System.out.println("Motive "+input+"  factors are:" +factors);
- //   System.out.print("Sorted list of "+input+ factors);
-    factors.clear();
 	}
+    
+
 	
-	//-----------------------------------------
-	 //terminalScanner.close();
-	
-	//--------------- find the freq of each letter 
-    Arrays.sort(s);      
-    while(ch<='Z'){
-    	h=0;dd=0;
-    	while( h<file.length()){
-        	if(s[h]==ch) dd++;
-        	h++;
-        }
-    	 System.out.println(ch+" found "+dd+" times.");
-    	ch++;	        	
-    }
-    
-//----------------------------------------------------
-    
-    
-    //------------- Find Ic
-    int posibleLength=0;
-    System.out.println("Assume posible length :");
-    posibleLength=terminalScanner.nextInt();
-    for(i=0;)
-    
-    
-	
-    }
+
 }
 }
