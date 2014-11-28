@@ -16,10 +16,12 @@ public class KasiskiMain {
     String file="";
     String scanner=null;
     String s123;
+    boolean loop=true;
+    int dev=1;
 
     System.out.println("Name of the ciphered file : ");
     input=terminalScanner.nextLine();
-    terminalScanner.close();
+   // terminalScanner.close();
 	try{
         fileScanner = new Scanner(new FileInputStream(input));
         
@@ -35,46 +37,58 @@ public class KasiskiMain {
 	//System.out.print(file);
 	file=file.replaceAll("\\W+", "");//remove all no-letters
 	file=file.toUpperCase();
-	System.out.print(file);
+	//System.out.print(file);
 	char[] s=new char[file.length()];
 	s=file.toCharArray();
 	
-	/*
-	while(i<file.length()/3 && up+3<file.length()){	        
-    	strTrimmed[i]=file.substring(down,up);
-    	System.out.print(strTrimmed[i]+",");
-    	down=down+3;
-    	up=up+3;
-    	i++;	        	
-    }
-	
-	for(j=0;j<i;j++){
-		list.addToStart(strTrimmed[j], j);
-		System.out.print(list.getNewEntry()+",");
-	}*/
 	
 	System.out.println();
 	while( up+3<file.length()&&i<file.length()/3){	
 		//s123=file.substring(down,up);
 		//System.out.print(s123+'-');
-		l.add(i,file.substring(down,up) );    	
+		l.add(file.substring(down,up) );    	
     	down=down+3;
     	up=up+3;
     	i++;	        	
     }
-
-	while(l.iterator().hasNext())
-	System.out.println(l.iterator().next()+":"+Collections.frequency(l, l.iterator().next()));
-	/*
-	while(l.iterator().hasNext()){	
-		i=0;
-		for(String St:l)
-			if (St.equals(l.iterator().next())) i++;			
-		
-		System.out.println(l.iterator().next()+":"+i);
+	//New declarations
+	Set<String> uniqueSet = new HashSet<String>(l);
+	List<Integer> indexes = new ArrayList<Integer>();
+	List<Integer> factors = new ArrayList<Integer>();
+	
+	/*--Frequency of motives---*/
+	for (String temp : uniqueSet) {
+		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+",");
+		System.out.print(l.indexOf(temp));
+		System.out.println();
 	}
-	*/
+	
+	while(loop){	
+	System.out.println("Look up for motive(type exit to loop out) :");
+	//input=null;
+	input=terminalScanner.nextLine();
+    if(input.equals("exit")) break;
     
+    for(i=0;i<l.size();i++){
+    	 if(l.get(i).equals(input)){
+    		 indexes.add(i);
+    		 
+    	 }
+    	 
+    }
+    
+    
+    System.out.println("Motive"+input+"factors are:");
+    for(i=0;i<indexes.size()-1;i++){
+    	//System.out.print(indexes.get(i+1)-indexes.get(i)+"-");
+    	for(dev=1;d<(indexes.get(i+1)-indexes.get(i));dev++){
+    		if((indexes.get(i+1)-indexes.get(i))%dev==0)
+    	}
+    		
+    }
+	}
+    
+
 	
 
 }

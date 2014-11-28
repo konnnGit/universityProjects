@@ -17,6 +17,7 @@ public class KasiskiMain {
     String scanner=null;
     String s123;
     boolean loop=true;
+    int dev=1;
 
     System.out.println("Name of the ciphered file : ");
     input=terminalScanner.nextLine();
@@ -50,9 +51,10 @@ public class KasiskiMain {
     	up=up+3;
     	i++;	        	
     }
-	
+	//New declarations
 	Set<String> uniqueSet = new HashSet<String>(l);
 	List<Integer> indexes = new ArrayList<Integer>();
+	List<Integer> factors = new ArrayList<Integer>();
 	
 	/*--Frequency of motives---*/
 	for (String temp : uniqueSet) {
@@ -61,9 +63,8 @@ public class KasiskiMain {
 		System.out.println();
 	}
 	
-	while(loop){
-	/*--!Factors of motives distances---*/
-	System.out.println("Look for motive(type exit to loop out) :");
+	while(loop){	
+	System.out.println("Look up for motive(type exit to loop out) :");
 	//input=null;
 	input=terminalScanner.nextLine();
     if(input.equals("exit")) break;
@@ -76,9 +77,15 @@ public class KasiskiMain {
     	 
     }
     
+    
     System.out.println("Motive"+input+"factors are:");
     for(i=0;i<indexes.size()-1;i++){
-    	System.out.print(indexes.get(i+1)-indexes.get(i)+"-");
+    	//System.out.print(indexes.get(i+1)-indexes.get(i)+"-");
+    	for(dev=1;dev<(indexes.get(i+1)-indexes.get(i));dev++){
+    		if((indexes.get(i+1)-indexes.get(i))%dev==0)
+    			factors.add(dev);
+    	}
+    		
     }
 	}
     
