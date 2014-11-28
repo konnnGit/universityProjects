@@ -145,9 +145,8 @@ public class KasiskiMain {
     	for(i=0;i<26;i++){
     		IC=IC+lettersFreq.get(i)*(lettersFreq.get(i)-1);
     		IC=IC*26/(file.length()*(file.length()-1));    	
-    		System.out.println("Posible length :"+j+" IC: "+IC);
     }
-    
+    System.out.println("Posible length :"+j+" IC: "+IC);
    // System.out.print(IC);
     }
     }

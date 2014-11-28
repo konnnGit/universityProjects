@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="1" version="2.0">
+<workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
 <window height="774" maximized="true" width="1012" x="64" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -36,7 +36,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMain.java" partName="KasiskiMain.java" path="/home/konnn/Git/University/EclipseWorkSpace/Kasiski/src/KasiskiMain.java" title="KasiskiMain.java" tooltip="Kasiski/src/KasiskiMain.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kasiski/src/KasiskiMain.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2202" selectionTopPixel="883"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2202" selectionTopPixel="1396"/>
 </editor>
 </editors>
 <views>
