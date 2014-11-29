@@ -145,7 +145,7 @@ public class KasiskiMain {
     if(posibleLength==0) break;
     for( int j=posibleLength;j-1>=0;j--){    
     	for(i=0;i<26;i++){
-    		IC=IC+lettFreq( s, file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength)).get(i)*lettFreq( s, file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength).get(i)-1);
+    		IC=IC+lettFreq( s, file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength)).get(i)*(lettFreq( s, file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength)).get(i)-1);
     		IC=IC*26/(file.length()*(file.length()-1));    	
     		
     }

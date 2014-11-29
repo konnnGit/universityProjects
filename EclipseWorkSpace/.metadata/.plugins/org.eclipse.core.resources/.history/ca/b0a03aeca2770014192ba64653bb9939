@@ -118,7 +118,7 @@ public class KasiskiMain {
 	//-----------------------------------------
 	 //terminalScanner.close();
 	
-	/*--------------- find the freq of each letter 
+	//--------------- find the freq of each letter 
 	//i=1;
 	List<Integer> lettersFreq = new ArrayList<Integer>();
     Arrays.sort(s );      
@@ -129,38 +129,31 @@ public class KasiskiMain {
         	h++;
         }
     	lettersFreq.add( dd);
-    	//i++;
+    	i++;
     	 System.out.println(ch+" found "+dd+" times.");
     	ch++;	        	
     }
     System.out.println(lettersFreq);
-----------------------------------------------------*/
-	
-	
+//----------------------------------------------------
     
     while(loop){
     //------------- Find Ic
-    System.out.println("Select posible length for IOC(type 0 to loop out) :");
+    System.out.println("Select posible length (type 0 to loop out) :");
     posibleLength=terminalScanner.nextInt();
-    if(posibleLength==0) break;
-    for( int j=posibleLength;j-1>=0;j--){    
+    for( int j=1;j<=posibleLength;j++){    
     	for(i=0;i<26;i++){
-    		IC=IC+lettFreq( s, file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength)).get(i)*lettFreq( s, file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength).get(i)-1);
+    		IC=IC+lettersFreq.get(i)*(lettersFreq.get(i)-1);
     		IC=IC*26/(file.length()*(file.length()-1));    	
-    		
+    		System.out.println("Posible length :"+j+" IC: "+IC);
     }
     
-    	 System.out.println("Posible length for IOC:"+j+" IC: "+IC);
+   // System.out.print(IC);
     }
-    
-   
     }
 	
     }
-    
-    
 }
-	public static List<Integer> lettFreq(char[] s,String file){
+	public List<Integer> lettFreq(char[] s,String file){
 		char ch='A';
 		int h=0;
 	    int dd=0; 
@@ -173,11 +166,10 @@ public class KasiskiMain {
 	        	h++;
 	        }
 	    	lettersFreq.add( dd);
-	    	//i++;
-	    	// System.out.println(ch+" found "+dd+" times.");
+	    	i++;
+	    	 System.out.println(ch+" found "+dd+" times.");
 	    	ch++;	        	
 	    }
 	    return lettersFreq;
 	}
-	
 }
