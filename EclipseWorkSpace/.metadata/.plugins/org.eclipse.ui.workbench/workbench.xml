@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <workbench progressCount="14" version="2.0">
+=======
+<workbench progressCount="11" version="2.0">
+>>>>>>> 7be4d53e757a1a13b3e77092025794f5211e3817
 <workbenchAdvisor/>
 <window height="774" maximized="true" width="1012" x="64" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -37,11 +41,15 @@
 </editorArea>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMain.java" partName="KasiskiMain.java" path="/home/konnn/Git/University/EclipseWorkSpace/Kasiski/src/KasiskiMain.java" title="KasiskiMain.java" tooltip="Kasiski/src/KasiskiMain.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kasiski/src/KasiskiMain.java"/>
+<<<<<<< HEAD
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2202" selectionTopPixel="1395"/>
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClubTester.java" partName="ClubTester.java" title="ClubTester.java" tooltip="/home/konnn/Git/University/EclipseWorkSpace/ClubTester/src/clubtester/ClubTester.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/home/konnn/Git/University/EclipseWorkSpace/ClubTester/src/clubtester/ClubTester.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3" selectionTopPixel="0"/>
+=======
+<editorState selectionHorizontalPixel="1876" selectionLength="121" selectionOffset="3732" selectionTopPixel="3237"/>
+>>>>>>> 7be4d53e757a1a13b3e77092025794f5211e3817
 </editor>
 </editors>
 <views>
@@ -236,8 +244,40 @@
 <item historyLabel="KasiskiMain.java" index="0">
 <position info="not_deleted" x="2320" y="0"/>
 </item>
+<<<<<<< HEAD
 <item active="true" historyLabel="ClubTester.java" index="1">
 <position info="not_deleted" x="3" y="0"/>
+=======
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4628" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4164" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="3712" y="274"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="3627" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4137" y="3"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4269" y="0"/>
+</item>
+<item active="true" historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="3854" y="0"/>
+>>>>>>> 7be4d53e757a1a13b3e77092025794f5211e3817
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
