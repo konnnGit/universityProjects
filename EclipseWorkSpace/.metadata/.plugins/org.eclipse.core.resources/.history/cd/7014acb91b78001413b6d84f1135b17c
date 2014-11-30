@@ -139,7 +139,6 @@ public class KasiskiMain {
 	
     
     while(loop){
-    	IC=0;
     //------------- Find Ic
     System.out.println("Select posible length for IOC(type 0 to loop out) :");
     posibleLength=terminalScanner.nextInt();
@@ -151,7 +150,7 @@ public class KasiskiMain {
     	
     		
     }
-    	IC=IC*26/(file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength).length()*(file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength).length())-1);
+    	IC=IC/26*(file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength).length()*(file.substring(file.length()-file.length()*j/posibleLength, file.length()-file.length()*(j-1)/posibleLength).length())-1);
     	 System.out.println("Posible length for IOC:"+j+" IC: "+IC);
     }
     

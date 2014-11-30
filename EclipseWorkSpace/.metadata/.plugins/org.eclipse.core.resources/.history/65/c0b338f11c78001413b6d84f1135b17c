@@ -139,7 +139,6 @@ public class KasiskiMain {
 	
     
     while(loop){
-    	IC=0;
     //------------- Find Ic
     System.out.println("Select posible length for IOC(type 0 to loop out) :");
     posibleLength=terminalScanner.nextInt();
