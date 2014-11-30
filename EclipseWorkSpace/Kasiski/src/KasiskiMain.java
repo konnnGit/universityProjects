@@ -54,8 +54,8 @@ public class KasiskiMain {
 	
 	
 	//System.out.print(file);
-	file.replaceAll("\\W+", "");//remove all no-letters
-	file.replaceAll("[0-9]","");//remove all no-letters
+	file=file.replaceAll("\\W+", "");//remove all no-letters
+	file=file.replaceAll("[0-9]","");//remove all no-letters
 	file=file.toUpperCase();
 	//System.out.print(file);
 	char[] s=new char[file.length()];
