@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="8" version="2.0">
+<workbench progressCount="16" version="2.0">
 <workbenchAdvisor/>
 <window height="1031" width="1856" x="64" y="27">
 <fastViewData fastViewLocation="1024"/>
@@ -35,7 +35,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="KasiskiMain.java" partName="KasiskiMain.java" path="/home/konnn/Git/University/EclipseWorkSpace/Kasiski/src/KasiskiMain.java" title="KasiskiMain.java" tooltip="Kasiski/src/KasiskiMain.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Kasiski/src/KasiskiMain.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1309" selectionTopPixel="1288"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6456" selectionTopPixel="3555"/>
 </editor>
 </editors>
 <views>
@@ -174,8 +174,26 @@
 <item historyLabel="KasiskiMain.java" index="0">
 <position info="not_deleted" x="464" y="0"/>
 </item>
-<item active="true" historyLabel="KasiskiMain.java" index="0">
+<item historyLabel="KasiskiMain.java" index="0">
 <position info="not_deleted" x="4683" y="16"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4133" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4130" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4116" y="0"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4063" y="49"/>
+</item>
+<item historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="2257" y="0"/>
+</item>
+<item active="true" historyLabel="KasiskiMain.java" index="0">
+<position info="not_deleted" x="4089" y="23"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -183,14 +201,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topLeft"/>
-<trimItem IMemento.internal.id="bottomLeft"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@27437031"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.editorss"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>

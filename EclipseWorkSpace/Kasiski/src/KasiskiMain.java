@@ -18,7 +18,7 @@ public class KasiskiMain {
     String scanner=null;    
     boolean loop=true;
     int dev=1;
-     float dIC=0; 
+     float dIC=0; //delta IoC
      float IC=0;
     
     
@@ -61,7 +61,7 @@ public class KasiskiMain {
 	char[] s=new char[file.length()];
 	s=file.toCharArray();
 	
-	
+/*---------cut the  plain text to motives according the size i gave before-------*/	
 	System.out.println();
 	while( up+motiveLength<file.length()&&i<file.length()/motiveLength){	
 		
@@ -75,7 +75,7 @@ public class KasiskiMain {
 	List<Integer> indexes = new ArrayList<Integer>();//stores the num of times that a motive found according to my desire(terminal input)
 	List<Integer> factors = new ArrayList<Integer>();//for each motive i inserted in terminal the programm finds its factors and stores
 	
-	//*----------------------------Frequency of motives---*/
+	//*----------------------------Frequency of motives------------------------------------------------*/
 	for (String temp : aSet) {
 		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+",");
 		//System.out.print(l.indexOf(temp));
@@ -137,13 +137,20 @@ public class KasiskiMain {
     System.out.println(lettersFreq);
 ----------------------------------------------------*/
 	
+	/*----or-----*/
+	System.out.println("Print the plain's text letter freq. :");
+	//input=terminalScanner.ne.nextLine();
+	//if(input.equals("y")) 
+	lettFreqToPrint(file);
+	//else continue;
+		
 	
-    
+	 /*------------- Find Index of Coincidence-------------------*/ 
     while(loop){
     	int tst=0;
     	String tmp=null;
     	IC=dIC=0;
-    //------------- Find Index of Coincidence
+   
     System.out.println("Select posible length for IOC(type 0 to loop out) :");
     posibleLength=terminalScanner.nextInt();
     if(posibleLength==0) break;
@@ -180,6 +187,8 @@ public class KasiskiMain {
     
     
 }
+	/*---------------------------methods----------------------*/
+	
 	//we need a method to returns an array of letters frequency for the given string "file" which is a subfile of the original file
 	public static List<Integer> lettFreq(String file){
 		char[] s=new char[file.length()];
@@ -203,6 +212,30 @@ public class KasiskiMain {
 	    }
 	//    System.out.println(lettersFreq);
 	    return lettersFreq;
+	}
+	
+	public static void lettFreqToPrint(String file){
+		char[] s=new char[file.length()];
+		s=file.toCharArray();
+		char ch='A';
+		int h=0;
+	    int dd=0; 
+		//List<Integer> lettersFreq = new ArrayList<Integer>();
+	    Arrays.sort(s );  
+	    while(ch<='Z'){
+	    	//int i=0;
+	    	h=0;dd=0;
+	    	while( h<file.length()){
+	        	if(s[h]==ch) dd++;
+	        	h++;
+	        }
+	    	//lettersFreq.add(i, dd);
+	    //	i++;
+	    	System.out.println(ch+" found "+dd+" times.");
+	    	ch++;	        	
+	    }
+	//    System.out.println(lettersFreq);
+	    //return lettersFreq;
 	}
 	
 }
