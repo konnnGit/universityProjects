@@ -32,8 +32,8 @@ public class KasiskiMain {
     }
     
     while(loop){   	
-  //  System.out.println(".");
-    System.out.println("Type a motive length (type 0 to exit): ");
+    System.out.println("Type 0 to exit.");
+    System.out.println("Type a motive length: ");
     motiveLength=terminalScanner.nextInt();
     up=down+motiveLength;
     
@@ -77,7 +77,7 @@ public class KasiskiMain {
 	
 	//*----------------------------Frequency of motives------------------------------------------------*/
 	for (String temp : aSet) {
-		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+".");
+		System.out.println(temp + " frequency: " + Collections.frequency(l, temp)+",");
 		//System.out.print(l.indexOf(temp));
 		System.out.println();
 	}
@@ -151,7 +151,7 @@ public class KasiskiMain {
     	String tmp=null;
     	IC=dIC=0;
    
-    System.out.println("Select posible length for IOC (type 0 to loop out) :");
+    System.out.println("Select posible length for IOC(type 0 to loop out) :");
     posibleLength=terminalScanner.nextInt();
     if(posibleLength==0) break;
     for( int j=0;j+1<=posibleLength;j++){
@@ -180,7 +180,7 @@ public class KasiskiMain {
     	   
     }
     dIC/=posibleLength;
-    System.out.println("Delta (average) IoC: "+dIC);
+    System.out.println("Delt IoC: "+dIC);
     }
 	
     }
