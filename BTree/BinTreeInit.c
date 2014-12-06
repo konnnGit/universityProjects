@@ -21,23 +21,24 @@ int main(int argc, char **argv){
 	int x;
 	TreeNode *root=malloc(sizeof(TreeNode));
 	root=NULL;
-	char word[31];  // mia symboloseira me to poly 30 characters;
+	//char word[31];  // mia symboloseira me to poly 30 characters;
 
-    printf("Dwste entoles:\n");
+    printf("Give orders:\n");
 
     while (1) {
         
-	scanf("%s",word);
+	//scanf("%s",word);
 	
-	if (strcmp(word, "print")==0) {
-		printf("Epileksate thn entolh print.");
+	if (strcmp(*(argv), "print")==0) {
+		printf("You choosed print.");
 		print_preorder(root);
 	}	
 		
-	else if (strcmp(word, "insert")==0) {
+	else if (strcmp(*(argv+1), "insert")==0) {
 		
-		scanf("%d", &x);
-	 	printf("Epileksate th entolh insert me orisma %d.", x);	
+		//scanf("%d", &x);
+	 	printf("You choosed to insert  %d.", x);	
+	 	
 	 	insert(root,x);	
 	} else if (strcmp(word, "search")==0){
 		scanf("%d", &x);
@@ -65,7 +66,6 @@ int search(TreeNode *root, int x) {
            }
               
    }
-   printf("The key %d did not found.",x);
    return 0;
 }
 
@@ -75,8 +75,7 @@ int search(TreeNode *root, int x) {
 // eisagwgi neou kleidiou sto dentro
 void insert(TreeNode *root, int x) {  
    TreeNode *v = root;  // v trexon kombos
-   TreeNode *pv = (TreeNode *) malloc(sizeof(TreeNode));
-   pv = NULL; // pv goneas tou v 
+   TreeNode *pv = NULL; // pv goneas tou v 
    while (v != NULL) {  
       pv = v; 
       if (x < v->key) v=v->left;
@@ -91,7 +90,7 @@ void insert(TreeNode *root, int x) {
    if (root != NULL) { 
       if (x < pv->key) pv->left=tmp;
          else pv->right=tmp;
-   } else pv=tmp;
+   } else root=tmp;
    return ; // epistrofi rizas dentrou
 }
 
