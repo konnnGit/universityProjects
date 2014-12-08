@@ -110,7 +110,7 @@ typedef struct job{
 			while(countSlices<timeSlice && countQ<nOfQ ){
 				
 				for (i=0;i<nOfQ;i++){//create new jobs
-					pushJob(queuesH[i],timeStart+(countSlices/timeSlice),i,p,nOfQ);//i is for id,p is for load
+					pushJob(queuesH[i],timeStart+(countSlices/timeSlice),i,p,nOfQ);//i is for id,p is
 					//queues[i]->id=i;
 				}
 				
