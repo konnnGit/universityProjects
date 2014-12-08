@@ -112,16 +112,13 @@ typedef struct job{
 				for (i=0;i<nOfQ;i++){//create new jobs
 					pushJob(queuesH[i],timeStart+(countSlices/timeSlice),i,p,nOfQ);//i is for id,p is for load
 					//queues[i]->id=i;
-				}
-				
-		
-				
+				}				
 				
 				
 									
 				temp=popJop(queuesH[countQ],timeStart+(countSlices/timeSlice));
 				
-				//This makes it Interleaved RoundRobin
+				
 				if(temp==NULL&&countQ+1<nOfQ){
 					countQ++; 
 					continue;
