@@ -1,5 +1,6 @@
 /*--Konstantinos Spalas, AM: 2025200800094,cst08094@uop.gr---*/
 
+
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -33,12 +34,11 @@ typedef struct job{
 		srand((float) time(NULL));//Initalize rand .	
 			
 		int timeStart,timeStop,timeSlice,countSlices,nOfQ,i,countQ;	
-		countSlices=countQ=0;
-		int j;	
+		countSlices=countQ=0;	
 		//nOfQ is number of queues and countQ counts them		
-		float p;//p is the load	
+		float p;	
 		int totalExecutions=0;	
-		float totalTimeWait=0;	
+		int totalTimeWait=0;	
 			
 		printf("Select the time start:");
 		scanf("%d",&timeStart);
@@ -54,7 +54,7 @@ typedef struct job{
 		scanf("%f",&p);
 		
 /*---This is an array which stores the head address of each queue---*/
-		timeStart++;//add a time not to evoke negative results
+		timeStart++;
 		job *queuesH[nOfQ];
 		//create queues		
 		for(i=0;i<nOfQ;i++){
@@ -68,40 +68,20 @@ typedef struct job{
 		
 				
 			
-		double	qExec[nOfQ];//stores for each queue the num of jobs executed
+		double	qExec[nOfQ];
 		float 	timeWait[nOfQ];
 		//Initialiazing 
 		for(i=0;i<nOfQ;i++){
-			qExec[i]=timeWait[nOfQ]=0;//Until now 0 executions 			
+			qExec[i]=timeWait[nOfQ]=0;			
 		}
 		
 		
 		//--------------------Start-----------------------
-		printf("\nThis is an   First-Come-First-Serve implementation:\n");
+		printf("\nThis is an  Interleaved RoundRobin implementation:\n");
 		job *temp;
 		temp=malloc(sizeof(job));
 		timeStart++;
-		
-		for (i=0;i<nOfQ;i++){//create new jobs, this happens once in order to sort to imply First-Come-First-Serve
-					pushJob(queuesH[i],timeStart+(countSlices/timeSlice),i,p,nOfQ);
-					//queues[i]->id=i;
-				}
-				
-				//Sort accordind the min timeIn when the first job created
-				for (i = 0; i < (nOfQ - 1); ++i){
-          for (j = 0; j < nOfQ - 1 - i; ++j ){
-               if (queuesH[j]->timeIn > queuesH[j+1]->timeIn)
-               {
-                    temp = queuesH[j+1];
-                    queuesH[j+1] = queuesH[j];
-                    queuesH[j] = temp;
-               }
-          }
-     }
-		
-		
-		timeStart++;
-		//loop the time scheduler operates( Start-Stop)
+		//int test=0;
 		while(timeStart<timeStop){					
 			signal(SIGINT, sigHandler);
 			countSlices=0;
@@ -109,25 +89,24 @@ typedef struct job{
 			//-----------------time slices start --------------------
 			while(countSlices<timeSlice && countQ<nOfQ ){
 				
-				for (i=0;i<nOfQ;i++){//create new jobs
-					pushJob(queuesH[i],timeStart+(countSlices/timeSlice),i,p,nOfQ);//i is for id,p is for load
+				for (i=0;i<nOfQ;i++){
+					pushJob(queuesH[i],timeStart+(countSlices/timeSlice),i,p,nOfQ);
 					//queues[i]->id=i;
-				}				
-				
+				}
 				
 									
 				temp=popJop(queuesH[countQ],timeStart+(countSlices/timeSlice));
 				
-				
-				/*if(temp==NULL&&countQ+1<nOfQ){//Check not to overcome time slices 
+				//This makes it Interleaved RoundRobin
+				if(temp==NULL&&countQ+1<nOfQ){
 					countQ++; 
 					continue;
-				}**Inerleaved module*****/		
+				}		
 				
 				if (temp!=NULL){
-					timeWait[countQ]=timeWait[countQ]+temp->timeOut-temp->timeIn;//Queue's i time wait
+					timeWait[countQ]=timeWait[countQ]+temp->timeOut-temp->timeIn;
 					qExec[countQ]++;
-					queuesH[countQ]=queuesH[countQ]->next;//One job came out and the head moves a node after.
+					queuesH[countQ]=queuesH[countQ]->next;
 					temp->next=NULL;
 					if	(countQ+1<nOfQ)				
 					countQ++;
@@ -161,9 +140,9 @@ typedef struct job{
 				
 		}
 		printf("\nStatistics ");
-		printf("for p=%f , %d slices and time %d : \n",p,timeSlice,timeStop-globalTimeStart);
+		printf("for p=%f , %d slices and time %d : \n",p,timeSlice,timeStop-globalTimeStart);	
+		for(i=0;i<nOfQ;i++){	
 			
-		for(i=0;i<nOfQ;i++){		
 			totalExecutions=totalExecutions+qExec[i];	
 			totalTimeWait=totalTimeWait+timeWait[i];
 		}			
@@ -177,7 +156,7 @@ typedef struct job{
 			printf("Time wait: %f \n",timeWait[i]/totalExecutions);		
 		}		
 		printf("\n");
-	    printf("\nTotal avg time wait %f",totalTimeWait/totalExecutions);		
+	    printf("\nTotal avg time wait %d",totalTimeWait/totalExecutions);		
 		printf("\nTotal jobs serviced: %d :", totalExecutions);
 		printf("\nTotal serve rate: %d",totalExecutions/timeStop-globalTimeStart);
 		
@@ -189,8 +168,7 @@ int  gen(int nOfQ,float p){
 	float f;	
 	f=(float)rand()/((float)RAND_MAX+1);
 	//f=	f*p/nOfQ;
-	if(f>=0 && f<p/nOfQ) 
-		return 1;
+	if(f>=0 && f<p/nOfQ) return 1;
 	else return 0;
 	
 }
@@ -204,17 +182,17 @@ int isEmpty(job *h){
 void pushJob(job *h,float timeIn,int id,float p,int nOfQ){
 	//printf("%d//",gen());
 	if(gen(nOfQ,p)==1){
-		if(h->next==NULL){//If it is the 1st job (This step can be eliminated because each queue has been already initiated)
+		if(h->next==NULL){//If it is the 1st queue
 			job *temp;
 			temp=malloc(sizeof(job));
 			temp->timeIn=timeIn;
-			temp->timeOut=0;
+			temp->timeOut=0;	
 			temp->id=id;
 			h->next=temp;
 			temp->next=NULL;						
 				
 		}	
-		else {	//if it is not the 1st job
+		else {	//if it is not the 1st
 		job *temp;
 		temp=malloc(sizeof(job));		
 		temp->timeIn=timeIn;
@@ -249,7 +227,7 @@ job *popJop(job *h,float timeOut){
 	
 	
  }	
-//This gives new global address to a job(Not used)
+//This gives new global address to a job
 job *newAdd(job *h){
 	if(h->next!=NULL){
 	 h=h->next;
@@ -260,12 +238,13 @@ job *newAdd(job *h){
 	
 	
 
-//Utility function (Not used)
+//Utility function
 void sigHandler(int sig){
    //printf("Signal %d, clock stalls...\n", sig);
    printf("printscreen");
    //start=0;
-}
+}	
+
 /*
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -283,6 +262,6 @@ void sigHandler(int sig){
  * MA 02110-1301, USA.
  * 
  */
-
-
+	
+	
 

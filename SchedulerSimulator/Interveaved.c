@@ -97,7 +97,7 @@ typedef struct job{
 									
 				temp=popJop(queuesH[countQ],timeStart+(countSlices/timeSlice));
 				
-				//This makes it Interleaved RoundRobin
+				//This makes it Interleaved RoundRobin because it goes to the next queue
 				if(temp==NULL&&countQ+1<nOfQ){
 					countQ++; 
 					continue;

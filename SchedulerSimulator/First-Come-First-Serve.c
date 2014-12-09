@@ -87,10 +87,10 @@ typedef struct job{
 					//queues[i]->id=i;
 				}
 				
-				//sort accordind the min timeIn when the first job created
+				//Sort accordind the min timeIn when the first job created to make it First-Come-First-Serve
 				for (i = 0; i < (nOfQ - 1); ++i){
           for (j = 0; j < nOfQ - 1 - i; ++j ){
-               if (queuesH[j]->timeIn < queuesH[j+1]->timeIn)
+               if (queuesH[j]->timeIn > queuesH[j+1]->timeIn)
                {
                     temp = queuesH[j+1];
                     queuesH[j+1] = queuesH[j];
@@ -101,7 +101,7 @@ typedef struct job{
 		
 		
 		timeStart++;
-		//int test=0;
+		//loop the time scheduler operates( Start-Stop)
 		while(timeStart<timeStop){					
 			signal(SIGINT, sigHandler);
 			countSlices=0;
@@ -119,15 +119,15 @@ typedef struct job{
 				temp=popJop(queuesH[countQ],timeStart+(countSlices/timeSlice));
 				
 				
-				if(temp==NULL&&countQ+1<nOfQ){
+				/*if(temp==NULL&&countQ+1<nOfQ){//Check not to overcome time slices 
 					countQ++; 
 					continue;
-				}		
+				}**Inerleaved module*****/		
 				
 				if (temp!=NULL){
-					timeWait[countQ]=timeWait[countQ]+temp->timeOut-temp->timeIn;
+					timeWait[countQ]=timeWait[countQ]+temp->timeOut-temp->timeIn;//Queue's i time wait
 					qExec[countQ]++;
-					queuesH[countQ]=queuesH[countQ]->next;
+					queuesH[countQ]=queuesH[countQ]->next;//One job came out and the head moves a node after.
 					temp->next=NULL;
 					if	(countQ+1<nOfQ)				
 					countQ++;
@@ -189,7 +189,8 @@ int  gen(int nOfQ,float p){
 	float f;	
 	f=(float)rand()/((float)RAND_MAX+1);
 	//f=	f*p/nOfQ;
-	if(f>=0 && f<p/nOfQ) return 1;
+	if(f>=0 && f<p/nOfQ) 
+		return 1;
 	else return 0;
 	
 }
@@ -203,7 +204,7 @@ int isEmpty(job *h){
 void pushJob(job *h,float timeIn,int id,float p,int nOfQ){
 	//printf("%d//",gen());
 	if(gen(nOfQ,p)==1){
-		if(h->next==NULL){//If it is the 1st queue
+		if(h->next==NULL){//If it is the 1st job (This step can be eliminated because each queue has been already initiated)
 			job *temp;
 			temp=malloc(sizeof(job));
 			temp->timeIn=timeIn;
@@ -213,7 +214,7 @@ void pushJob(job *h,float timeIn,int id,float p,int nOfQ){
 			temp->next=NULL;						
 				
 		}	
-		else {	//if it is not the 1st
+		else {	//if it is not the 1st job
 		job *temp;
 		temp=malloc(sizeof(job));		
 		temp->timeIn=timeIn;
@@ -248,7 +249,7 @@ job *popJop(job *h,float timeOut){
 	
 	
  }	
-//This gives new global address to a job
+//This gives new global address to a job(Not used)
 job *newAdd(job *h){
 	if(h->next!=NULL){
 	 h=h->next;
@@ -259,7 +260,7 @@ job *newAdd(job *h){
 	
 	
 
-//Utility function
+//Utility function (Not used)
 void sigHandler(int sig){
    //printf("Signal %d, clock stalls...\n", sig);
    printf("printscreen");
