@@ -35,6 +35,7 @@ typedef struct TreeNode{
 void insert(TreeNode *,int);
 int search(TreeNode *,int);
 void print(TreeNode *);
+int max(TreeNode *);
 
 int main(int argc, char **argv){
 	int x;
@@ -42,7 +43,7 @@ int main(int argc, char **argv){
 	//root=NULL;
 	char word[31];  // mia symboloseira me to poly 30 characters;
 
-    printf("Give orders:\n");
+    printf("Give orders (print,insert,max,search):\n");
 
     while (1) {
         
@@ -51,9 +52,22 @@ int main(int argc, char **argv){
 	if (strcmp(word, "print")==0) {
 		printf("Choosed to  print.");
 		print(root);
+	}
+	
+	else if (strcmp(word, "exit")==0){
+		if(root==NULL) printf("exited");
+		else {
+			while(root
+		}
 	}	
+	
+	else if (strcmp(word, "max")==0){
+		if (max(root)==-1) printf("The tree is emty.");
+		else printf("The max is %d ",max(root)); 
 		
-	else if (strcmp(word, "insert")==0) {
+	}
+		
+	else if (strcmp(word, "insert")==0)   {
 		
 		scanf("%d", &x);
 	 	printf("Choosed to insert %d.", x);	
@@ -109,6 +123,14 @@ void insert(TreeNode *root, int x) {
 	   if(x<pv->key) pv->left=tmp;
 	   else pv->right=tmp;
 	}   
+}
+
+int max(TreeNode * root){
+	TreeNode *v = root;  
+	if (v==NULL) return -1;
+	while(v->right!=NULL)v=v->right;
+	return v->key;
+		
 }
 
 
