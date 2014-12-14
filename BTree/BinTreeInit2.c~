@@ -230,7 +230,8 @@ void print(TreeNode * root) {//print function is a preOrder traversal
 	if (root==NULL) return;
 	int i,j;
 	TreeNode *v = root;  
-	if (v!=NULL) {			
+	if (v!=NULL) {		
+		
 	for(j=0;j<v->level;j++) printf("\n");
 	for(i=0;i<v->key-1;i++)
 		printf(" ");
