@@ -28,6 +28,7 @@
 
 typedef struct TreeNode{
 	int key;
+	int level;
 	struct TreeNode *left;
 	struct TreeNode *right;
 }TreeNode;
@@ -36,6 +37,12 @@ void insert(TreeNode *,int);
 int search(TreeNode *,int);
 void print(TreeNode *);
 int max(TreeNode *);
+void succ(TreeNode *,int);
+TreeNode *returnPreXNode(TreeNode *,int);
+TreeNode *returnXNode(TreeNode *,int);
+int size(TreeNode *,int);
+int countOrder(TreeNode * );
+void delete(TreeNode *);
 
 int main(int argc, char **argv){
 	int x;
@@ -43,7 +50,7 @@ int main(int argc, char **argv){
 	//root=NULL;
 	char word[31];  // mia symboloseira me to poly 30 characters;
 
-    printf("Give orders (print,insert,max,search):\n");
+    printf("Give orders (print,insert x,max,search x,size x,succ x,exit):\n");
 
     while (1) {
         
@@ -55,29 +62,44 @@ int main(int argc, char **argv){
 	}
 	
 	else if (strcmp(word, "exit")==0){
-		if(root==NULL) printf("exited");
-		else {
-			while(root
-		}
+		printf("Deleting tree...exiting....\n"); 
+		delete(root);
+		return 0;
 	}	
 	
 	else if (strcmp(word, "max")==0){
-		if (max(root)==-1) printf("The tree is emty.");
+		if (max(root)==-1) printf("The tree is emty.\n");
 		else printf("The max is %d ",max(root)); 
 		
 	}
+	
+	else if (strcmp(word, "size")==0){
+		scanf("%d", &x);
+	 	printf("Choosed to find the size from node %d which is %d . \n", x,size(root,x));
 		
-	else if (strcmp(word, "insert")==0)   {
 		
+	}
+	
+	else if (strcmp(word, "succ")==0){
+		scanf("%d", &x);
+	 	printf("Choosed to succ %d.", x);	 
+	 	succ(root,x);	
+		
+	}
+		
+	else if (strcmp(word, "insert")==0)   {		
 		scanf("%d", &x);
 	 	printf("Choosed to insert %d.", x);	
 	 	insert(root,x);	
-	} else if (strcmp(word, "search")==0){
+	} 
+	
+	else if (strcmp(word, "search")==0){
 		scanf("%d", &x);
-		if(	search(root,x)) printf("The key %d already exists.\n", x);
-		else printf("The key %d doesn't exists.\n", x);
+		if(	search(root,x)) printf("The key %d already exist.\n", x);
+		else printf("The key %d doesn't exist.\n", x);
 	}
-	else printf("Uknown command...retry:");
+	
+	else printf("Uknown command...retry:\n");
 	
 	printf("\n");
 }
@@ -86,6 +108,14 @@ int main(int argc, char **argv){
 	
 	return 1;
 }
+
+void delete(TreeNode *root){
+	if(root==NULL) return;
+	delete(root->left);
+	delete(root->right);
+	free(root);
+}
+		 
 
 int search(TreeNode *root, int x) {
 	TreeNode *v = root;  // v trexon kombos
@@ -101,6 +131,34 @@ int search(TreeNode *root, int x) {
    }
   // printf("The key %d did not found.\n",x);
    return 0;
+} 
+
+TreeNode * returnPreXNode(TreeNode *root,int x){
+	TreeNode *v = root;
+	TreeNode *pv =NULL;
+	while (v != NULL) {  
+      //pv = v; 
+      if (x < v->key) v=v->left;
+      else if (x > v->key) v=v->right;
+      else   return pv;           
+              
+   }
+	
+	return NULL;
+}
+
+TreeNode * returnXNode(TreeNode *root,int x){
+	TreeNode *v = root;
+	//TreeNode *pv =NULL;
+	while (v != NULL) {  
+      //pv = v; 
+      if (x < v->key) v=v->left;
+      else if (x > v->key) v=v->right;
+      else   return v;           
+              
+   }
+	return NULL;
+	
 }
 
 
@@ -108,18 +166,21 @@ int search(TreeNode *root, int x) {
 
 
 void insert(TreeNode *root, int x) {  
+		int level=0;
 	   TreeNode *v = root; 
 	   TreeNode *pv =NULL;
 	   TreeNode *tmp = (TreeNode *) malloc(sizeof(TreeNode));
-	   tmp->key=x; tmp->left=tmp->right=NULL;    
-	   if(v==NULL){ v=tmp; return;}
+	   tmp->key=x; tmp->left=tmp->right=NULL; tmp->level=0;   
+	   if(v==NULL){ v=tmp; v->level=level; return;}
 	   else if(search(v,x)){ printf("The key %d already exists.\n", x); return;}
 	   else{   
 			while (v != NULL) { 
 				pv=v;
-				if (x < v->key) v=v->left;
-				else v=v->right;
+			//	level++;
+				if (x < v->key){ level=(v->level)+1; v=v->left; }
+				else {  level=(v->level)+1;v=v->right;}
 	   } 
+	   tmp->level=level;
 	   if(x<pv->key) pv->left=tmp;
 	   else pv->right=tmp;
 	}   
@@ -133,15 +194,48 @@ int max(TreeNode * root){
 		
 }
 
+void succ(TreeNode * root,int x) {
+	if (root==NULL){  printf(" Emty tree.\n"); return;}
+	
+	else if(search(root,x)){
+		 printf("The key %d  exists ",x);
+		 if(returnXNode(root,x)->right!=NULL) printf(" and the least greater is %d . ",returnXNode(root,x)->right->key);
+		 else printf(" and the least greater is %d . ",returnPreXNode(root,x)->key);
+	//printf(" there is not any greater key\n");
+		 
+	 } 
+	 else  printf(" The key does not exist\n"); 
+	
+	
+}
+
+int countOrder(TreeNode * root){
+	TreeNode *v =root;
+	if(v==NULL) return 0;
+	else return countOrder(v->left)+1+countOrder(v->right);
+}
+	
+
+int size(TreeNode * root,int x) {
+//	int s=0;	
+	TreeNode *v = returnXNode(root,x); 
+	return countOrder(v);
+}
+
 
 void print(TreeNode * root) {
-	int i;
+	if (root==NULL) return;
+	int i,j;
 	TreeNode *v = root;  
-	if (v!=NULL) {
-	for(i=0;i<v->key-1;i++) printf(" ");
+	if (v!=NULL) {		
+		
+	for(j=0;j<v->level;j++) printf("\n");
+	for(i=0;i<v->key-1;i++)
+		printf(" ");
 	printf("%d",v->key);
-	printf("\n");
 	print(v->left);
+	
 	print(v->right);
+	
  }
  }
