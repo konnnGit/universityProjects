@@ -218,7 +218,6 @@ int countOrder(TreeNode * root){//a utility function which counts the nodes from
 	else return countOrder(v->left)+1+countOrder(v->right);
 }
 	
-
 int size(TreeNode * root,int x) {
 //	int s=0;	
 	TreeNode *v = returnXNode(root,x); //count from the node of key x

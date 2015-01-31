@@ -1,4 +1,4 @@
-/*-----Konstantinos Spalas , cst08094@uop.gr , AM: 2025200800094---------*/
+/*--------Konstantinos Spalas , cst08094@uop.gr , AM: 2025200800094---------*/
 
 /*
  * This program is free software; you can redistribute it and/or modify
