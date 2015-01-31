@@ -170,7 +170,7 @@ void insert(TreeNode *root, int x) {
 		int level=0;
 	   TreeNode *v = root; 
 	   TreeNode *pv =NULL;
-	   TreeNode *tmp = (TreeNode *) malloc(sizeof(TreeNode));
+	   TreeNode *tmp = (TreeNode *) malloc(sizeof(TreeNode));//Due to the existance check happens later the memory is occupied in case of existanse.Have to go lower.
 	   tmp->key=x; tmp->left=tmp->right=NULL; tmp->level=0;   
 	   if(v==NULL){ v=tmp; v->level=level; return;}
 	   else if(search(v,x)){ printf("The key %d already exists.\n", x); return;}
