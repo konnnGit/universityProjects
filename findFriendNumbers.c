@@ -35,13 +35,13 @@ int main(){
   int *p;
   int i,j,k,size,n=0;   
   int low=0,high=0,num=0,sum=0;
-  printf ("Give the lower search field number, except number 0 , and press enter :\n");
+  printf ("Give the lower  field's number, except number 0 , and press enter :\n");
   scanf ("%d",&low);
-  printf ("Give the upper search field number and press enter  :\n");
+  printf ("Give the upper  field's number and press enter  :\n");
   scanf ("%d",&high);
  
   if (high<low){
-    printf ("Give the upper search field number be  greater than lower and press enter :\n");   
+    printf ("Msg: Give the upper field's number to  be  greater than the  lower and press enter :\n");   
     scanf ("%d",&high); }
    
   int arr[high-low];
