@@ -1,1 +1,0 @@
-/home/konnn/tst/1.c
