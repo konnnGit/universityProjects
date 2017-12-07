@@ -41,7 +41,7 @@ int main(){
   scanf ("%d",&high);
  
   if (high<low){
-    printf ("Msg: Give the upper field's number to  be  greater than the  lower and press enter :\n");   
+    printf ("Msg:Give the upper field's number to  be  greater than the  lower and press enter :\n");   
     scanf ("%d",&high); }
    
   int arr[high-low];
@@ -83,4 +83,4 @@ int main(){
 }
 
 /*---------------------------------Under GPL-------------------------------------------
-Created by konnn (Konstantinos Spalas).Email:konnn@live.com*/
+Created by konnn (Konstantinos Spalas).Email:konnn.sp@gmail.com*/
