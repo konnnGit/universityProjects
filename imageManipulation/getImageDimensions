@@ -1,9 +1,8 @@
 #!/bin/bash
 
-#This script takes a directory path as first argument and a number as reference in order to compare the dimensions of images placed in directoty
 
-directory=$1
-referenceDimention=$2
+directory=$1 #1st argmnt
+referenceDimention=$2 #2nd argmnt
 for filename in $directory*.jpg; 
 do
  width=$(identify  -format  "%w"  $filename)
@@ -14,11 +13,9 @@ do
  
  if   [ $width -lt $referenceDimention  ]; then 
  echo "that is NOT" due to width
- #else echo "that IS"
- fi
+  fi
  if   [ $height -lt $referenceDimention  ]; then 
  echo "that is NOT" due to height
- #else echo "that IS"
- fi
+  fi
  done
  exit 0
