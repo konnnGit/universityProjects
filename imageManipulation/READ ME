@@ -1,4 +1,4 @@
-This script runs from trminal and takes two arguments :
+This script runs from terminal and takes two arguments :
 1. A directory path  
 2. A number as reference in order to compare the dimensions of images placed in directoty above
 
