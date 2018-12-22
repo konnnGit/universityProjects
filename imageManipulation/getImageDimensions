@@ -1,29 +1,47 @@
 #!/bin/bash
+	 function dirLoop(){ 		
+	 	  		
+		for filename in $1/*.jpg; do
+			if [  -e $filename ];then							
+		
+ 		width=$(magick identify  -format  "%w"  $filename)
+ 		height=$(identify  -format  "%h"  $filename)
+ 		echo filename $filename :
+ 		echo the width is $width
+ 		echo the height is $height 
+ 		if   [ $width -lt $2 ]; then 
+ 			echo "that is NOT accepted because width is less than $2 px"
+  		fi
+ 		if   [ $height -lt $2 ]; then 
+ 			echo "that is NOT accepted because height is less than $2 px"
+ 	    fi
+ 	    else echo NO FILES IN $1 
+ 	    break
+ 	    fi
+ 	done
+	}
 
-
-directory=$1 #1st argmnt
-referenceDimention=$2 #2nd argmnt
-if   [ -z $directory  ]; then 
- echo you forgot the 1st argument, exiting...
- exit 0
-  fi
-  if   [ -z $referenceDimention  ]; then 
- echo you forgot the 2nd argument, exiting...
- exit 0
-  fi
-for filename in $directory*.jpg; 
-do
- width=$(identify  -format  "%w"  $filename)
- height=$(identify  -format  "%h"  $filename)
- echo filename $filename :
- echo the width is $width
- echo the height is $height
- 
- if   [ $width -lt $referenceDimention ]; then 
- echo "that is NOT" due to width
-  fi
- if   [ $height -lt $referenceDimention ]; then 
- echo "that is NOT" due to height
-  fi
- done
- exit 0
+	directory=$1 #1st argmnt
+	referenceDimention=$2 #2nd argmnt
+		if   [ -z $directory  ]; then 
+ 			echo you forgot the 1st argument, exiting...
+ 			exit 0
+ 		fi 
+  		if   [ -z $referenceDimention  ]; then 
+ 			echo you forgot the 2nd argument, exiting...
+ 			exit 0
+  		fi
+  	
+  	#dirLoop $directory $referenceDimention
+  	cd $directory
+  	array=$(find  $PWD  -maxdepth 2 -type d )
+  	#echo -n ..search in inter direc $internalDir ...
+  	#echo $array
+  	for i in $array;do   	
+  		echo ***searching in $i/  with dimension $referenceDimention:
+  			dirLoop $i $referenceDimention   		
+	 	   	
+  	
+  	done
+ 	exit 0
+ 	
