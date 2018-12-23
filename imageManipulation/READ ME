@@ -1,4 +1,5 @@
 This script runs from terminal and takes two arguments :
 1. A directory path  
-2. A number as reference in order to compare the dimensions of images placed in directoty above
+2. A number, as reference, in order to compare the dimensions of images placed in directoty above
 
+The results of images found with dimensions lower than reference are placed in a file create in home folder, named "imageResults"
