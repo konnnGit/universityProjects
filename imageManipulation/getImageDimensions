@@ -40,7 +40,7 @@
   	#echo $array
   	for i in $array;do   
   		numOfFilesFound=0	
-  		echo Searching in $i/  "for" images with $referenceDimention px dimension...
+  		echo Searching in $i/  "for" images with "less" than $referenceDimention px dimension...
   			dirLoop $i $referenceDimention
   			echo ...scaned $count files. 	 	
   	
