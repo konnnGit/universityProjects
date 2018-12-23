@@ -10,9 +10,11 @@
  		#echo the width is $width
  		#echo the height is $height 
  		if   [ $width -lt $2 ]; then 
- 			echo  $filename : " width is $width px (reference is $referenceDimention)" >> /home/konnn/imageResults			
+ 			echo  $filename : " width is $width px (reference is $referenceDimention)" >> /home/konnn/imageResults
+ 			mv 	$filename $HOME/lowResImages		
   			elif   [ $height -lt $2 ]; then 
  			echo  $filename :" height is $height px (reference is $referenceDimention)" >> /home/konnn/imageResults
+ 			mv 	$filename $HOME/lowResImages/
  			fi
  	    else echo NO FILES IN $1 
  	    break
@@ -20,7 +22,7 @@
  	done
  	#return $count
 	}
-
+	mkdir $HOME/lowResImages/
 	directory=$1 #1st argmnt
 	referenceDimention=$2 #2nd argmnt
 		if   [ -z $directory  ]; then 
@@ -45,6 +47,6 @@
   			echo ...scanned $count files. 	 	
   	
   	done
-  	echo " Results are in imageResults, in home folder, exiting.." 
- 	exit 0
+  	echo " Results are in imageResults, in home folder and the low resolution images moved to $HOME/lowResImages/ directory, exiting.." 
+ 	exit
  	
