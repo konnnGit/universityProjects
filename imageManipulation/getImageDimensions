@@ -45,5 +45,6 @@
   			echo ...scaned $count files. 	 	
   	
   	done
+  	echo " Results are in imageResults, in home folder, exiting.." 
  	exit 0
  	
