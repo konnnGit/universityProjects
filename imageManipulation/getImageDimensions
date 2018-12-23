@@ -1,6 +1,7 @@
 #!/bin/bash
 	 function dirLoop(){ 		
-	 	 count=0	
+	 	 count=0
+	 	 	
 		for filename in $1/*.jpg; do
 			if [  -e $filename ];then							
 		count=$(($count+1))
@@ -10,11 +11,11 @@
  		#echo the width is $width
  		#echo the height is $height 
  		if   [ $width -lt $2 ]; then 
- 			echo  $filename : " width is $width px (reference is $referenceDimention)" >> /home/konnn/imageResults
- 			mv 	$filename $HOME/lowResImages		
+ 			echo  $filename : " width is $width px (reference is $referenceDimention)" >> /home/konnn/imageResults.txt
+ 			mv 	$filename $HOME/imageResults/		
   			elif   [ $height -lt $2 ]; then 
- 			echo  $filename :" height is $height px (reference is $referenceDimention)" >> /home/konnn/imageResults
- 			mv 	$filename $HOME/lowResImages/
+ 			echo  $filename :" height is $height px (reference is $referenceDimention)" >> /home/konnn/imageResults.txt
+ 			mv 	$filename $HOME/imageResults/
  			fi
  	    else echo NO FILES IN $1 
  	    break
@@ -22,7 +23,7 @@
  	done
  	#return $count
 	}
-	mkdir $HOME/lowResImages/
+	mkdir $HOME/imageResults/
 	directory=$1 #1st argmnt
 	referenceDimention=$2 #2nd argmnt
 		if   [ -z $directory  ]; then 
@@ -47,6 +48,6 @@
   			echo ...scanned $count files. 	 	
   	
   	done
-  	echo " Results are in imageResults, in home folder and the low resolution images moved to $HOME/lowResImages/ directory, exiting.." 
+  	echo " Results are in imageResults, in home folder and the low resolution images moved to $HOME/imageResults/ directory, exiting.." 
  	exit
  	
