@@ -35,7 +35,7 @@
   	#dirLoop $directory $referenceDimention
   	
   	cd $directory
-  	array=$(find  $PWD  -maxdepth 2 -type d )
+  	array=$(find  $PWD  -maxdepth 20 -type d )
   	#echo -n ..search in inter direc $internalDir ...
   	#echo $array
   	for i in $array;do   
