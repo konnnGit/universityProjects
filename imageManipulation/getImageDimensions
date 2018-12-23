@@ -1,24 +1,24 @@
 #!/bin/bash
 	 function dirLoop(){ 		
-	 	  		
+	 	 count=0	
 		for filename in $1/*.jpg; do
 			if [  -e $filename ];then							
-		
+		count=$(($count+1))
  		width=$(magick identify  -format  "%w"  $filename)
  		height=$(identify  -format  "%h"  $filename)
- 		echo filename $filename :
- 		echo the width is $width
- 		echo the height is $height 
+ 		#echo filename $filename :
+ 		#echo the width is $width
+ 		#echo the height is $height 
  		if   [ $width -lt $2 ]; then 
- 			echo "that is NOT accepted because width is less than $2 px"
-  		fi
- 		if   [ $height -lt $2 ]; then 
- 			echo "that is NOT accepted because height is less than $2 px"
- 	    fi
+ 			echo  $filename : " width is $width px (reference is $referenceDimention)" >> /home/konnn/imageResults			
+  			elif   [ $height -lt $2 ]; then 
+ 			echo  $filename :" height is $height px (reference is $referenceDimention)" >> /home/konnn/imageResults
+ 			fi
  	    else echo NO FILES IN $1 
  	    break
  	    fi
  	done
+ 	#return $count
 	}
 
 	directory=$1 #1st argmnt
@@ -33,14 +33,16 @@
   		fi
   	
   	#dirLoop $directory $referenceDimention
+  	
   	cd $directory
   	array=$(find  $PWD  -maxdepth 2 -type d )
   	#echo -n ..search in inter direc $internalDir ...
   	#echo $array
-  	for i in $array;do   	
-  		echo ***searching in $i/  with dimension $referenceDimention:
-  			dirLoop $i $referenceDimention   		
-	 	   	
+  	for i in $array;do   
+  		numOfFilesFound=0	
+  		echo Searching in $i/  "for" images with $referenceDimention px dimension...
+  			dirLoop $i $referenceDimention
+  			echo ...scaned $count files. 	 	
   	
   	done
  	exit 0
