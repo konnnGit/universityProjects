@@ -23,8 +23,11 @@
  	done
  	#return $count
 	}
-	
-	mkdir $HOME/imageResults/
+	if [ -d $HOME/imageResults/ ];then
+		echo "$HOME/imageResults/ exists already.."
+		else 
+			mkdir $HOME/imageResults/
+	fi
 	directory=$1 #1st argmnt
 	referenceDimention=$2 #2nd argmnt
 		if   [ -z $directory  ]; then 
@@ -35,6 +38,7 @@
  			echo you forgot the 2nd argument, exiting...
  			exit 0
   		fi
+  	echo ""
   	echo Searching "for" images with "less" than $referenceDimention px dimension "in" directory $directory...
   	
   	cd $directory
