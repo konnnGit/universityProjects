@@ -23,6 +23,7 @@
  	done
  	#return $count
 	}
+	
 	mkdir $HOME/imageResults/
 	directory=$1 #1st argmnt
 	referenceDimention=$2 #2nd argmnt
@@ -34,8 +35,7 @@
  			echo you forgot the 2nd argument, exiting...
  			exit 0
   		fi
-  	
-  	#dirLoop $directory $referenceDimention
+  	echo Searching "for" images with "less" than $referenceDimention px dimension "in" directory $directory...
   	
   	cd $directory
   	array=$(find  $PWD  -maxdepth 20 -type d )
@@ -43,7 +43,7 @@
   	#echo $array
   	for i in $array;do   
   		numOfFilesFound=0	
-  		echo Searching in $i/  "for" images with "less" than $referenceDimention px dimension...
+  		echo Searching in $i/ ...  
   			dirLoop $i $referenceDimention
   			echo ...scanned $count files. 	 	
   	
