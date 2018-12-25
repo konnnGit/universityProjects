@@ -24,6 +24,7 @@
  	#return $count
 	}
 	if [ -d $HOME/imageResults/ ];then
+		echo
 		echo "$HOME/imageResults/ exists already.."
 		else 
 			mkdir $HOME/imageResults/

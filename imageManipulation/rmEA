@@ -1,0 +1,24 @@
+#!/bin/bash
+directory=$1 #1st argmnt
+	
+		if   [ -z $directory  ]; then 
+ 			echo you forgot the 1st argument, exiting...
+ 			exit 0
+ 		fi 
+  		
+  	echo ""
+  	   	
+  	cd $directory
+  	array=$(find  -maxdepth 0   -type d )
+  	#echo $array
+  	for i in $array;do
+  	echo Searching in $i..
+  	base=$(basename $i )
+  	#echo   
+  		if [ "$base" = "@eaDir" ];then
+  			rm -rf $i
+  		echo removing  $i ...  
+  			
+  		fi		 	
+  	
+  	done
